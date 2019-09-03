@@ -1,16 +1,15 @@
 class Dog {
     constructor(name){
-        
         this.name = name;
-        Dog.count = i++;
-        
+        Dog.count++;
     }
     static getDogCount(){
-        return `the dog count is ${Dog.dogCount}`;
+        return `the dog count is ${Dog.count}`;
     }
-    static setDogCount
+    static setDogCount() {
         Dog.count = 0;
         console.log(Dog.getDogCount());
+    }
 }
 Dog.setDogCount();
 var dog1 = new Dog("Tommy");
