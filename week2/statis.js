@@ -1,17 +1,21 @@
 class Dog {
     constructor(name){
-        var i = 0;
+        
         this.name = name;
-        this.count = i++;
+        Dog.count = i++;
         
     }
-    static dogCount(i){
-        return `the dog count is ${i}`;
+    static getDogCount(){
+        return `the dog count is ${Dog.dogCount}`;
     }
+    static setDogCount
+        Dog.count = 0;
+        console.log(Dog.getDogCount());
 }
+Dog.setDogCount();
 var dog1 = new Dog("Tommy");
 var dog2 = new Dog("Rex");
 
-Dog.dogCount();
-console.log(Dog.dogCount())
+
+console.log(Dog.getDogCount())
 // static keyword makes it a class method and not an instance method anymore.
