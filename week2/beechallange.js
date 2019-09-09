@@ -7,12 +7,11 @@ Same with thirst. (0 = full, can't drink any more)
 
 */
 class Bee {
-    constructor(newName, positionX, positionY, hungerLevel, thirstLevel) {
+    constructor(newName, positionX, positionY) {
         this.name = newName;
         this.positionX = positionX;
         this.positionY = positionY;
-        this.hungerLevel = hungerLevel;
-        this.thirstLevel = thirstLevel;
+       
     }
     getCurrentPosition () {
         return (`The bee named ${this.name} is at coordinates X: ${this.positionX} , Y: ${this.positionY}`);
@@ -20,13 +19,19 @@ class Bee {
 
     refillHunger () {
         this.hungerLevel = 0;
+        if (this.hungerLevel <=0){
         console.log(`${this.name}s hunger has been topped up`)
+        this.hungerLevel = 0;
     }
+}
 
     refillThirst () {
         this.thirstLevel = 0;
+        if (this.thirstLevel <= 0){
         console.log(`${this.name}s thirst has been quenched`)
+        this.thirstLevel = 0;
     }
+}
 
     renameBee (newName) { 
         this.name = newName;
@@ -74,13 +79,30 @@ This class will inherit from your completed Bee class, and add new functions to 
 
 */
 
-class Queen extends Bee {
-    constructor(newName, positionX, positionY, hungerLevel, thirstLevel){
-        super(newName, positionX, positionY, hungerLevel, thirstLevel);
-    }
-    beeCreate() {
-        
+
+class Queen extends Bee{
+    constructor(name,positionX,positionY){
+        super(name, positionX, positionY);
+        this.wheresBee = [];
+
     }
 
+    createBee(name,positionX,positionY){
+        newBee = new Bee(name,positionX,positionY);
+        this.wheresBee.push(newBee);
+    }
+
+    beeLocation(){
+        return `my location ${this.wheresBee}`
+    }
 
 }
+
+queenBee = new Queen("Queen Bee",1,5);
+queenBee.createBee("bee2",2,6);
+queenBee.createBee("bee3",3,7);
+queenBee.createBee("bee4",4,8);
+queenBee.createBee("bee5",5,9);
+
+console.log(queenBee.wheresBee);
+console.log(queenBee.getCurrentPosition());

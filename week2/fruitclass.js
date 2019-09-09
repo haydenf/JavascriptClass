@@ -11,9 +11,9 @@ class Fruit {
 class Apple extends Fruit {
     constructor(name, color, bites){
         super(name, color, bites);
-        name = "Apple"
-        color = "Red"
-        bites = 6;
+        this.name = "Apple"
+        this.color = "Red"
+        this.bites = 6;
     }
 }
 
@@ -42,3 +42,4 @@ fruit1 = new Fruit('Orange', 'orange', 5)
 console.log(fruit1)
 fruit2 = new Orange()
 console.log(fruit2)
+
