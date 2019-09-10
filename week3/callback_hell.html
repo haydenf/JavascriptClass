@@ -13,20 +13,53 @@
 <body>
     <button id="button"> Click me</button>
     <script>
-        document.getElementById("button").addEventListener("click", () => {
-        $.get("https://api.chucknorris.io/jokes/random", (joke0)=> {
-            $.get("https://api.chucknorris.io/jokes/random", (joke1)=> {
-                $.get("https://api.chucknorris.io/jokes/random", (joke2)=> {
-                    $.get("https://api.chucknorris.io/jokes/random", (joke3)=> {
-                        $.get("https://api.chucknorris.io/jokes/random", (joke4)=> {
-                            let jokeArray = [joke0.value, joke1.value, joke2.value,joke3.value,joke4.value];
-                            console.log(jokeArray)
-                        });
-                    });
-                });
-            });
-        });
-    });
+        function chuck(){
+            return new Promise((resolve, reject) => {
+            $.get("https://api.chucknorris.io/jokes/random", (joke) => {
+                if(joke.value){
+                resolve(joke.value)
+            } else {
+            reject("something went wrong")
+            }
+        })
+    })
+}
+document.getElementById("button").addEventListener("click", () => {
+    let jokes = [];
+    chuck()
+        .then(joke1 => {
+            jokes.push(joke1);
+            return chuck()
+        })
+        .then(joke2 => {
+            jokes.push(joke2);
+            return chuck()
+        })
+        .then(joke3 => {
+            jokes.push(joke3);
+            return chuck()
+        })
+        .then(joke4 => {
+            jokes.push(joke4);
+            console.log(jokes)
+        })
+        .catch(err => console.log(err));
+
+});
+    //     document.getElementById("button").addEventListener("click", () => {
+    //     $.get("https://api.chucknorris.io/jokes/random", (joke0)=> {
+    //         $.get("https://api.chucknorris.io/jokes/random", (joke1)=> {
+    //             $.get("https://api.chucknorris.io/jokes/random", (joke2)=> {
+    //                 $.get("https://api.chucknorris.io/jokes/random", (joke3)=> {
+    //                     $.get("https://api.chucknorris.io/jokes/random", (joke4)=> {
+    //                         let jokeArray = [joke0.value, joke1.value, joke2.value,joke3.value,joke4.value];
+    //                         console.log(jokeArray)
+    //                     });
+    //                 });
+    //             });
+    //         });
+    //     });
+    // });
 
     //callback hell
         console.log("execute something else")
