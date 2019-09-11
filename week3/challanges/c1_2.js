@@ -23,6 +23,10 @@ This seems a little bizarre, right? Can you think of why we might want to break 
 const fetch = require("node-fetch");
 var urlToVisit = `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 808)}`;
 
+function json(data){
+    return getRawJson.data
+}
+    
 fetch(urlToVisit)
   .then(getRawJSON)
   .then(getPokemonName)
