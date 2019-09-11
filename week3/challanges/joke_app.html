@@ -1,0 +1,79 @@
+<!-- /*
+CHALLENGE 1: Multi-Promise Handling
+
+1.1 - Core App: 
+Create a terminal app that pulls one joke from each of these APIs & only shows them all when everything has finished loading:
+- https://sv443.net/jokeapi 
+- https://github.com/15Dkatz/official_joke_api?ref=apilist.fun
+- https://icanhazdadjoke.com/api
+
+You should be able to use "Promise.all" to handle this cleanly & display 3 jokes all at the same time!
+
+1.2 - Joke Race:
+Modify the app so that it uses "Promise.race" to return the first joke that comes back from any of the APIs. Only show one joke! 
+
+
+*/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+    require('node-fetch');
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">click me</button>
+       <script>  
+
+            document.getElementById("button").addEventListener("click", jokers);
+            function jokers(){
+            fetch("https://sv443.net/jokeapi/category/Programming")
+                .then(response => response.json())
+                .then(data =>  console.log(data.joke))
+                .catch(err => console.log(err));
+          
+            fetch("https://official-joke-api.appspot.com/random_joke")
+                .then(response => response.json())
+                .then(data =>  console.log(data.setup, data.punchline))
+                .catch(err => console.log(err));
+    
+            fetch("https://icanhazdadjoke.com/slack")
+                .then(response => response.json())
+                .then(data =>  console.log(data.attachments[0].text))
+                .catch(err => console.log(err));
+            }        
+
+        function joke1(){
+        fetch("https://sv443.net/jokeapi/category/Programming")
+            .then(response => response.json())
+            .then(data =>  console.log(data.joke))
+            .catch(err => console.log(err));
+        }
+        function joke2(){
+        fetch("https://official-joke-api.appspot.com/random_joke")
+            .then(response => response.json())
+            .then(data =>  console.log(data.setup, data.punchline))
+            .catch(err => console.log(err));
+        }
+        function joke3(){
+        fetch("https://icanhazdadjoke.com/slack")
+            .then(response => response.json())
+            .then(data =>  console.log(data.attachments[0].text))
+            .catch(err => console.log(err));
+        }        
+        var jokeList = [joke1(), joke2(), joke3()]
+        Promise.all(jokeList)
+            .then(jokeList =>console.log(jokeList))
+            .catch(err => console.log(err));
+        </script>
+    
+</body>
+</html>
