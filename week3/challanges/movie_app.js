@@ -34,6 +34,6 @@ movieChoice.on("data", (movie) => {
 function movieSearch(movie){
 fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=823dba26&t=${movie}`)
 .then(response => response.json())
-.then(data => console.log(`The movie with the title of '${data.Title}' has a MetaCritic score of ${data.Metascore} and an IMDB rating of ${data.imdbRating}.`))
+.then(data => console.log(`This movie'${data.Title}' has a MetaCritic score of ${data.Metascore} and an IMDB rating of ${data.imdbRating}.`))
 .catch(err => console.log(err));
 }
