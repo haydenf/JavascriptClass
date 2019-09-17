@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1> How old are you </h1>
+    <form>
+        <input type="text"/>
+        <input type="submit" value="dont click me"/>
+    </form>
+    <script>
+        var clickBtn = document.querySelector("input[type=submit]");
+
+        clickBtn.addEventListener("click", function(event){
+            console.log(event);
+            console.log(event.target);
+            console.log(event.target.value)
+            alert("submitted for the form");
+        })
+</script>
+</body>
+</html>
