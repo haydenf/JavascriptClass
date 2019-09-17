@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+  
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <ul></ul>
+
+    <script>
+        /*
+
+        CHALLENGE 2:
+        Modify the code below so that it shows all Pokemon names on the page at the same time, rather than one at a time.
+        It should ideally cover these steps if the code doesn't exactly cover the steps already:
+            - returning data about a random Pokemon
+            - returning an array that contains data about X amount of Pokemon (where X is a number provided by the user)
+            - creating HTML elements about each Pokemon in the array 
+            - displaying all newly-created HTML elements on the webpage at the same time
+
+        Remembering how good functions should be written - clear, specific purposes - you may end up with several functions here.
+        Don't limit yourself to what the code already provides - modify this code as much as you need to solve the challenge!
+            
+        */
+        // const fetch = require("node-fetch");
+
+
+        let util = {};
+
+        util.get = async (url) =>
+        {
+            let data = await fetch(url),
+                response = await data.json();
+            return response;
+        }
+
+        
+
+
+
+        // async function getRandomPoke() {
+        //     let urlToVisit = `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 808)}`;
+        //     let response = await fetch(urlToVisit);
+        //     let data = await response.json()
+        //     return data;
+        // }
+
+        async function getPokemonTeam(teamSize) {
+            
+            var pokemonTeamData = [];
+
+            var ulElem = document.querySelector("ul");
+
+            for (var i = 0; i < teamSize; i++){
+                let rndPokemon = util.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 808)}`);
+
+                let currPoke = await rndPokemon;
+
+                pokemonTeamData.push(currPoke);
+            }   
+
+            for (pokemon in pokemonTeamData)
+            {
+                console.log(pokemonTeamData);
+                var newListItem = document.createElement("li");
+                newListItem.innerHTML = pokemonTeamData[pokemon].name;
+                ulElem.appendChild(newListItem);
+            }
+            
+        }
+
+
+        // async function printPokeTeam(pokemonTeamData) {
+        //     var arrayLength = pokemonTeamData.length;
+        //     for (var i = 0; i < arrayLength; i++) {
+                
+        //         }
+
+        //     }
+        //     printPokeTeam();
+
+        getPokemonTeam(parseInt(prompt("How many Pokemon would you like to see?"))); 
+    </script>
+</body>
+
+</html>
