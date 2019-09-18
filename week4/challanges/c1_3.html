@@ -1,0 +1,71 @@
+ <!-- 
+        CHALLENGE 2: Browser Keypress Counter
+
+        Create a new HTML file that will act as a specific style of a keylogger - a keypress counter! 
+        It'll track which keys you press and detail how many times you press each key.
+        You might need to brush up on event listeners for this one too - see what events exist to cover keyboard presses or user inputs.
+
+        2.1 - Core Functionality:
+            
+            Whenever a user presses a key on their keyboard, you should be able to list that on the screen. 
+            Eg. if the user presses "E" on the keyboard, the phrase "E: 1" will appear on the screen. 
+            If the user presses E again, the phrase changes to "E: 2" and the number will keep on rising as the user presses E.
+            The page shouldn't show a new "E: 1" every time you press E -- a new line should only appear for each unique key.
+            Eg. if the user presses "A" on the keyboard, the screen should show: 
+                E: 2
+                A: 1 
+            
+            The big trick for this challenge: the keys & the number of times they've been pressed should be saved to cookies.
+            When you close the page and reopen it, the page should be able to load up existing data and pick up from where the user left off.
+        
+
+
+        2.2 - Expiration
+
+            Keypress information should only be saved for 10 seconds. 
+            Any keypress entry older than 10 seconds should be deleted & not shown.
+            If the entry is being shown on the page and then expires, it should be removed from the page.
+            Hint: Updating the page content at an interval might be handy here.
+
+    -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="myList"></ul>
+
+        <script>
+            var ulElem = document.querySelector("ul");
+            var i = 0;
+            var keylog = [];
+            
+                document.addEventListener("keydown", function(log){
+                keylog.push({
+                    counter: i++,
+                    keypress: log.key
+                 });
+                 postLi();
+                });
+                console.log(keylog);
+                
+                                
+                async function postLi() {
+                await keylog.forEach((elem) => {
+                    var node = document.createElement("li");  
+                    var counter = elem.counter;
+                    var keypressing = elem.keypress;
+                    var textnode = document.createTextNode(`${keypressing}: ${counter}`);
+                    node.appendChild(textnode);     
+                    document.getElementById("myList").appendChild(node);
+                    })
+                }
+        
+        </script>
+    </body>
+    </html>
