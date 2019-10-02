@@ -40,6 +40,7 @@
     <body>
         <ul id="myList"></ul>
 
+
         <script>
             var ulElem = document.querySelector("ul");
             var i = 0;
@@ -55,16 +56,21 @@
                 console.log(keylog);
                 
                                 
-                async function postLi() {
-                await keylog.forEach((elem) => {
-                    var node = document.createElement("li");  
-                    var counter = elem.counter;
-                    var keypressing = elem.keypress;
-                    var textnode = document.createTextNode(`${keypressing}: ${counter}`);
+                 function postLi() {
+                 keylog.forEach((elem) => {
+                     //destructuring down objects for ease
+                    let {counter, keypress} = elem;
+                    document.querySelector('#myList').innerHTML = "";
+                    var node = document.createElement("li");
+                    // var counter = elem.counter;
+                    // var keypressing = elem.keypress;
+                    var textnode = document.createTextNode(`${keypress}: ${counter}`);
                     node.appendChild(textnode);     
                     document.getElementById("myList").appendChild(node);
-                    })
+
+                    })  
                 }
+              
         
         </script>
     </body>

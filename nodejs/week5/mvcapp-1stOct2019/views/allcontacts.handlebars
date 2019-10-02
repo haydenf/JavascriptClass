@@ -1,0 +1,33 @@
+<style>
+#nice {
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+</style>
+<div class="container" >
+
+    {{!-- <h1>{{this.name}}</h1>
+
+    <h3>{{this.email}}</h1>
+
+
+    <p>{{this.inquiry}}</p> --}}
+    <div id="nice">
+{{#each allData}}
+    <div class="card" style="width: 350px; margin-bottom: 25px;">
+  <ul class="list-group list-group-flush" style="list-style: none">
+    <li class="list-group-item"> name: {{this.name}}</li>
+    <li class="list-group-item">email: {{this.email}}</li>
+    <li class="list-group-item">inquiry: {{this.inquiry}}</li>
+</li>
+  </ul>
+</div>
+</div>
+        {{/each}}
+
+
+</div>
