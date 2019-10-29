@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">Get User </button>
+
+    <script>
+        ///////////// USING XHR //////////////////
+
+    // document.getElementById("button").addEventListener("click", getUserName);
+
+    // function getUserName() {
+    //     //make xhr object
+    //     let request = new XMLHttpRequest
+    //     // initialize
+    //     request.open("GET", "https://randomuser.me/api/", true);
+    //     // send request
+    //     request.send();
+    //     // on success
+    //     request.onload = (response) => {
+    //         const parsedResults = JSON.parse(request.response)
+    //         console.log(parsedResults);
+    //         console.log(parsedResults.results[0].name.first)
+    //     }
+    //     // on error
+    //     request.onerror = (err) => {
+    //         console.log(err);
+    //     }
+    // }
+        ////////////// USING AJAX ///////////////
+    // document.getElementById("button").addEventListener("click", getUserName);
+
+    function getUserName(){
+        $.ajax({
+            url: "https://randomuser.me/api/",
+            type: "GET",
+            success: data => console.log(data.results[0].name.first),
+            error: err => console.log(err)
+         });
+    }
+    setInterval(getUserName, 5000)
+    </script>
+</body>
+</html>

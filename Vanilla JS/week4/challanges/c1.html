@@ -1,0 +1,125 @@
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <link href="https://fonts.googleapis.com/css?family=Bitter|Cabin|Hind|Lato|Mukta|Roboto&display=swap" rel="stylesheet">
+       <title>Document</title>
+   </head>
+
+   <body>
+       <button id="fBtn"> Click me to change font</button>
+       <button id="colBtn"> click me for colors </button>
+       <!-- <button id="green">click for me green</button>
+       <button id="black">click me for black</button> -->
+        <h1 id="hFont" style="text-align:center;font-size:70px;" > Look im changing font</h1>
+        
+
+       <script>
+    
+
+
+
+
+    var colors = ['purple', 'black', 'green', 'red', 'pink', 'blue', 'grey', 'white'],
+    i = 0;
+
+    var changeBg = document.body;  
+
+        colBtn.addEventListener("click", function(event){
+        changeBg.style.backgroundColor = colors[i];
+        i++
+            if (i >= colors.length){
+            i = 0;
+         }
+    });
+
+    var changeFont = document.getElementById("hFont");
+    var fontsR = ['Bitter', 'Cabin', 'Hind', 'Lato', 'Mukta', 'Roboto'], 
+    i = 0;
+    
+        fBtn.addEventListener("click", function(event){
+        changeFont.style.fontFamily = fontsR[i];
+        i++
+            if (i >= fontsR.length){
+            i = 0;
+         }
+    });
+
+ 
+    
+
+
+    // var clickBtn = document.getElementById("purple");
+    // clickBtn.addEventListener("click", function(event){
+    // document.body.style.backgroundColor = "purple";
+    // })
+    // var clickBtn = document.getElementById("green");
+    // clickBtn.addEventListener("click", function(event){
+    // document.body.style.backgroundColor = "green";
+    // })
+    // var clickBtn = document.getElementById("black");
+    // clickBtn.addEventListener("click", function(event){
+    // document.body.style.backgroundColor = "black";
+    // })
+       </script>
+   </body>
+   </html>
+   
+   <!-- 
+        CHALLENGE 1: Customizable Webpage
+            Create a webpage that lets you cycle through different colours and fonts for sections of a page whenever the user clicks a button.
+            For example, you might have a traditional 3-column layout with a navbar & footer.
+            In each of those layout sections should be a button that lets you cycle through some colours for the background, and
+            a button that lets you cycle through some fonts for the text. 
+            
+
+            You can grab some good layout starter code here:
+            https://www.w3schools.com/css/css_website_layout.asp 
+
+            You can check out some good web colours here:
+            https://www.w3schools.com/html/html_colors.asp
+
+            You can check out easy-to-use web fonts here:
+            https://fonts.google.com/
+
+            You should be able to loop through arrays for colours & arrays for fonts for each section of the layout,
+            just by clicking a button.
+
+     -->
+
+
+
+    
+
+
+
+    <!-- 
+    
+        CHALLENGE 4: NASA Astronomy Photo of the Day API
+
+            NASA runs an astro-photography API service where you can get photos of space, fresh from their rovers & satellites!
+            Let's use it to decorate a webpage.
+
+            4.1 - Core Functionality: 
+                Go to the NASA API website here: https://api.nasa.gov/api.html#apod
+                Do whatever needs to be done to get an API key (usually make an account or enter your email address somewhere).
+                Store that API key somewhere handy.
+        
+                In a HTML file, write some code that will grab the current photo from the APOD API and set it as the page's background. 
+        
+        
+            4.2 - More Data!:
+                Use at least 3 of the other NASA APIs to show some cool space data on the web page as well.
+                There's data such as Mars weather, asteroid flight paths, interesting space event details (eg. meteor shower).
+                Make sure it's all readable - brush up on your CSS!
+        
+            4.3 - More Photos!:
+                Use the NASA Image & Video Library API and the NASA Mars Rover Photos API to pull a new image and set it as the background of the page when the user clicks on a button on the page.
+                APIs are here:
+                    - https://api.nasa.gov/api.html#Images 
+                    - https://api.nasa.gov/api.html#MarsPhotos
+        
+                Use a Promise race here - you should call both APIs and only use the first image that comes back.
+     -->

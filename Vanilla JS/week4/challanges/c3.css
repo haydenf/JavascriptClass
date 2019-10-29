@@ -1,0 +1,175 @@
+   .flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    }
+    .windowflex {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    
+.skyscraper1 {
+    height: 500px;
+    width: 200px;
+    background-color: #555;
+  }
+        .window1 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window2 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window3 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window4 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window5 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window6 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window7 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window8 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window9 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window10 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window11 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window12 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window13 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window14 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window15 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window16 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window17 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window18 {
+          margin: 10px;
+          height: 45px;
+          width: 45px;
+          background-color: white;
+        }
+        .window19 {
+          margin: 10px;
+          height: 100px;
+          width: 85px;
+          background-color: white;
+          display: flex;
+          justify-items: center;
+        }
+
+  
+
+  .skyscraper2 {
+    height: 700px;
+    width: 200px;
+    background-color: #555;
+  }
+  
+  .skyscraper3 {
+    height: 900px;
+    width: 200px;
+    background-color: #555;
+  }
+  .skyscraper4 {
+    height: 800px;
+    width: 200px;
+    background-color: #555;
+  }
+  .skyscraper5 {
+    height: 850px;
+    width: 200px;
+    background-color: #555;
+  }
+  .skyscraper6 {
+    height: 700px;
+    width: 200px;
+    background-color: #555;
+  }
+  .skyscraper7 {
+    height: 550px;
+    width: 200px;
+    background-color: #555;
+  }
+  .skyscraper8 {
+    height: 450px;
+    width: 200px;
+    background-color: #555;
+  }
+
+

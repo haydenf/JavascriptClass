@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+  <style>
+        .blue{
+            color:blue;
+        }
+    </style>
+<body>
+    <h1> Welcome! </h1>
+    <p> Understanding the dom </p>
+    <div>
+        <ul>
+            <li>Add dom elements</li>
+            <li>Change dome elements</li>
+            <li>Query dom elements</li>
+            <li>Remove dom elements</li>
+        </ul>
+    </div>
+    <script>
+        //adding
+        var myDiv = document.createElement("div");
+        document.body.appendChild(myDiv);
+            var pTag = document.createElement("p"); 
+            myDiv.appendChild(pTag); 
+                var content = document.createTextNode("adding to paragraph within p elements"); 
+                  pTag.appendChild(content); 
+
+        var myDiv1 = document.createElement("div");
+        document.body.appendChild(myDiv1);
+         var pTag2 = document.createElement("p"); 
+             myDiv1.appendChild(pTag2); 
+              pTag2.innerHTML = "Another way of adding text"
+
+    // Querying DOM elements
+    var myUl = document.querySelector("ul");
+    var myLi = document.createElement("li");
+    myUl.appendChild(myLi);
+    myLi.innerHTML = "adding content to li"
+
+    // adding classes
+    var title = document.querySelector("h1");
+    title.classList.add("blue");
+    title.style.color = "red";
+    title.style.paddingLeft = "50%";
+
+    // removing
+    title.classList.remove("blue");
+
+    //queryselectorall and get elementsbytagname
+    var li1 = document.querySelectorAll("li");
+    var li2 = document.getElementsByTagName("li");
+    console.log(li1)
+    console.log(li2)
+
+  
+    var newLi = document.createElement("li");
+    myUl.appendChild(newLi);
+    newLi.innerHTML = "adding some more content to li"
+    console.log(li1)
+    console.log(li2)
+
+    newLi.remove();
+    console.log(li1)
+    console.log(li2)
+
+    var parag = document.querySelector("p")
+    parag.remove();
+    </script>
+</body>
+</html>

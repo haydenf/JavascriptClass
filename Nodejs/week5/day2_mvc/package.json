@@ -1,0 +1,22 @@
+{
+  "name": "day2_mvc",
+  "version": "1.0.0",
+  "description": "mvc lesson",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever -c \"nodemon --exitcrash -L\" app.js"
+  },
+  "author": "hayden",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mongoose": "^5.7.3"
+  },
+  "devDependencies": {
+    "forever": "^1.0.0",
+    "nodemon": "^1.19.3"
+  }
+}
